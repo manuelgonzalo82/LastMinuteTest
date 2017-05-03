@@ -14,18 +14,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class Test1 {
-    @BeforeClass
-    public static void runOnceBefore() {
-        PriceCalculator priceCalculator = new PriceCalculator();
-        System.out.println("@BeforeClass");
-    }
-
-    @Before
-    public void startPriceCalculator() {
-        PriceCalculator priceCalculator = new PriceCalculator();
-        System.out.println("startPriceCalculator");
-    }
-
 
     @Test
     public void test1() {
@@ -33,6 +21,9 @@ public class Test1 {
         String[] expected1Array = {"* TK2372, 157,6 €", "* TK2659, 198,4 €", "* LH5909, 90,4 €"};
         //List<String> expected1 = Arrays.asList("* TK2372, 157,6 €", "* TK2659, 198,4 €", "* LH5909, 90,4 €");
         List<String> result1 = priceCalculator.calculatePrice("AMS", "FRA", 31, 1, 0, 0);
+        for (String res : result1) {
+            System.out.println("res: " + res);
+        }
         assertThat(result1, hasSize(3));
         assertThat(result1, containsInAnyOrder(expected1Array));
     }
