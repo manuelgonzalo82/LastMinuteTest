@@ -30,9 +30,9 @@ public class InfantsCsvParser {
                 line = br.readLine();
             }
         } catch (FileNotFoundException fnfe) {
-
+            System.out.println("InfantsCsvParser - File not found: " + filename);
         } catch (IOException ioe) {
-
+            System.out.println("InfantsCsvParser - IO Exception: " + ioe.getMessage());
         } finally {
             try {
                 br.close();

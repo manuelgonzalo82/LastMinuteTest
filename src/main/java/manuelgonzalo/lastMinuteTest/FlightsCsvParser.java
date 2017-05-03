@@ -37,9 +37,9 @@ public class FlightsCsvParser {
                 line = br.readLine();
             }
         } catch (FileNotFoundException fnfe) {
-
+            System.out.println("FlightsCsvParser - File not found: " + filename);
         } catch (IOException ioe) {
-
+            System.out.println("FlightsCsvParser - IO Exception: " + ioe.getMessage());
         } finally {
             try {
                 br.close();

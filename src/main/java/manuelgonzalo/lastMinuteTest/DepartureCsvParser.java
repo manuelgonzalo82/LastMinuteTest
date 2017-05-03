@@ -30,9 +30,9 @@ public class DepartureCsvParser {
                 line = br.readLine();
             }
         } catch (FileNotFoundException fnfe) {
-
+            System.out.println("DepartureCsvParser - File not found: " + filename);
         } catch (IOException ioe) {
-
+            System.out.println("DepartureCsvParser - IO Exception: " + ioe.getMessage());
         } finally {
             try {
                 br.close();
